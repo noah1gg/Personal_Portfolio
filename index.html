@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nouh Elhichem — Junior Web Developer & UI/UX Designer. Building premium digital experiences." />
+  <title>Nouh Elhichem — Digital Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════ NAV ═══════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">NOUH <span>ELHICHEM</span></a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#values" class="nav__link">Values</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#services" class="nav__link">Services</a></li>
+        <li><a href="#projects" class="nav__link">Work's</a></li>
+        <li><a href="#contact" class="nav__link nav__link--cta">Contact</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__noise"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal">Digital Portfolio</p>
+      <h1 class="hero__name reveal reveal--delay-1">NOUH<br/>ELHICHEM</h1>
+      <div class="hero__tags reveal reveal--delay-2">
+        <a href="#skills" class="hero__tag hero__tag--solid">Core Skills &amp; Expertise</a>
+        <a href="#services" class="hero__tag hero__tag--ghost">Services</a>
+      </div>
+    </div>
+    <div class="hero__card reveal reveal--delay-3">
+      <div class="hero__card-text">
+        <h2 class="hero__role">WEB<br/>DEVELOPER<br/><span>&amp; UI/UX DESIGNER</span></h2>
+      </div>
+      <div class="hero__card-img">
+        <img src="assets/me.png" alt="Nouh Elhichem" />
+      </div>
+    </div>
+    <a href="#about" class="hero__scroll" aria-label="Scroll down">
+      <span class="hero__scroll-line"></span>
+    </a>
+  </section>
+
+  <!-- ═══════════════════ ABOUT ═══════════════════ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about__inner">
+        <div class="about__left reveal">
+          <span class="section-label">About Me</span>
+          <h2 class="about__headline">Designing and Developing<br/><em>Experiences People Enjoy Using.</em></h2>
+        </div>
+        <div class="about__right reveal reveal--delay-1">
+          <p>Web developer with front-end (CSS) and back-end skills. Passionate about creating responsive and efficient web applications with clean user experiences.</p>
+          <p>Also interested in UI/UX design, with experience designing interfaces using Figma. Motivated to keep learning, improve digital experiences, and take on new technical challenges.</p>
+          <a href="#projects" class="btn btn--gold">My Latest Work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ VALUES ═══════════════════ -->
+  <section class="values" id="values">
+    <div class="values__bg"></div>
+    <div class="container">
+      <div class="values__header reveal">
+        <h2 class="section-title section-title--light">CORE VALUES</h2>
+      </div>
+      <div class="values__grid">
+        <div class="value-item reveal">
+          <span class="value-item__label">Specialization</span>
+          <p class="value-item__text">Building modern WordPress experiences while exploring creative UI/UX design through Figma</p>
+        </div>
+        <div class="value-item reveal reveal--delay-1">
+          <span class="value-item__label">Focus</span>
+          <p class="value-item__text">Prioritizing modern UI/UX, full responsiveness, and smooth user journeys.</p>
+        </div>
+        <div class="value-item reveal reveal--delay-2">
+          <span class="value-item__label">Mission</span>
+          <p class="value-item__text">Helping brands establish a premium online presence through elegant solutions.</p>
+        </div>
+      </div>
+
+      <div class="soft-skills reveal">
+        <h3 class="section-title section-title--light soft-skills__title">SOFT SKILLS</h3>
+        <div class="soft-skills__grid">
+          <div class="soft-skill-card reveal reveal--delay-1">
+            <div class="soft-skill-card__bar"></div>
+            <div>
+              <strong>Adaptability</strong>
+              <span>Good Adaptability</span>
+            </div>
+          </div>
+          <div class="soft-skill-card reveal reveal--delay-2">
+            <div class="soft-skill-card__bar"></div>
+            <div>
+              <strong>Communication</strong>
+              <span>Effective Communication</span>
+            </div>
+          </div>
+          <div class="soft-skill-card reveal reveal--delay-3">
+            <div class="soft-skill-card__bar"></div>
+            <div>
+              <strong>Collaboration</strong>
+              <span>Team Spirit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SKILLS ═══════════════════ -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-header__line"></div>
+        <div>
+          <span class="section-label">Expertise</span>
+          <h2 class="section-title">CORE SKILLS &amp;<br/>EXPERTISE</h2>
+          <p class="section-sub">Combining web development and UI/UX design to build modern digital experiences.</p>
+        </div>
+      </div>
+      <div class="skills__grid">
+        <div class="skill-card reveal">
+          <div class="skill-card__icon">&#9745;</div><!-- WP icon -->
+          <div class="skill-card__corner skill-card__corner--tl"></div>
+          <div class="skill-card__corner skill-card__corner--tr"></div>
+          <h3 class="skill-card__title">WordPress &amp; Website Creation</h3>
+          <p class="skill-card__desc">Advanced proficiency in building flexible, scalable, and high performance websites using the world's leading CMS and page builder.</p>
+        </div>
+        <div class="skill-card reveal reveal--delay-1">
+          <div class="skill-card__icon">&lt;/&gt;</div>
+          <div class="skill-card__corner skill-card__corner--tl"></div>
+          <div class="skill-card__corner skill-card__corner--tr"></div>
+          <h3 class="skill-card__title">Front-End Development</h3>
+          <p class="skill-card__desc">Solid foundation in modern web standards (HTML5 &amp; CSS3) to ensure pixel-perfect design execution and full responsiveness.</p>
+        </div>
+        <div class="skill-card reveal reveal--delay-2">
+          <div class="skill-card__icon">&#9998;</div>
+          <div class="skill-card__corner skill-card__corner--tl"></div>
+          <div class="skill-card__corner skill-card__corner--tr"></div>
+          <h3 class="skill-card__title">UI/UX Design</h3>
+          <p class="skill-card__desc">User-focused UI/UX design using Figma to create clean, intuitive, and visually engaging digital experiences with strong usability and modern design principles.</p>
+        </div>
+        <div class="skill-card reveal reveal--delay-3">
+          <div class="skill-card__icon">&#9744;</div>
+          <div class="skill-card__corner skill-card__corner--tl"></div>
+          <div class="skill-card__corner skill-card__corner--tr"></div>
+          <h3 class="skill-card__title">Responsive Design</h3>
+          <p class="skill-card__desc">Ensuring seamless and engaging user experiences across all devices, from mobile phones to high-resolution large desktops.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SERVICES ═══════════════════ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-header__line"></div>
+        <div>
+          <span class="section-label">What I Offer</span>
+          <h2 class="section-title">PROFESSIONAL<br/>SERVICES</h2>
+          <p class="section-sub">Delivering modern web experiences through design and development.</p>
+        </div>
+      </div>
+      <div class="services__grid">
+        <div class="service-card reveal">
+          <div class="service-card__icon">&lt;/&gt;</div>
+          <div class="service-card__corner service-card__corner--tl"></div>
+          <div class="service-card__corner service-card__corner--tr"></div>
+          <h3 class="service-card__title">Web Design</h3>
+          <p class="service-card__desc">Visually striking, user-focused designs that capture your brand and engage customers.</p>
+          <span class="service-card__tag">Visual Identity</span>
+        </div>
+        <div class="service-card reveal reveal--delay-1">
+          <div class="service-card__icon">&#8984;</div>
+          <div class="service-card__corner service-card__corner--tl"></div>
+          <div class="service-card__corner service-card__corner--tr"></div>
+          <h3 class="service-card__title">WordPress Dev</h3>
+          <p class="service-card__desc">Robust, scalable WordPress sites tailored to your business needs.</p>
+          <span class="service-card__tag">CMS Solutions</span>
+        </div>
+        <div class="service-card reveal reveal--delay-2">
+          <div class="service-card__icon">&#9998;</div>
+          <div class="service-card__corner service-card__corner--tl"></div>
+          <div class="service-card__corner service-card__corner--tr"></div>
+          <h3 class="service-card__title">UI/UX Strategy</h3>
+          <p class="service-card__desc">Optimized user journeys and interfaces for better conversion and accessibility.</p>
+          <span class="service-card__tag">User Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ PROJECTS ═══════════════════ -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        
+        <h2 class="section-title">MY LATEST<br/>WORK</h2>
+      </div>
+    </div>
+
+    <!-- Tajinos -->
+    <div class="project-block project-block--dark">
+      <div class="container">
+        <div class="project-block__inner">
+          <div class="project-block__info reveal">
+            <span class="project-block__category">Luxury E-Commerce</span>
+            <h2 class="project-block__name">TAJINOS</h2>
+            <h3 class="project-block__subtitle">The Concept</h3>
+            <p class="project-block__desc">A premium landing page focused on high-end storytelling and conversion-optimized product presentation.</p>
+            <div class="project-block__tags">
+              <span>UI/UX Strategy</span>
+              <span>E-Commerce Flow</span>
+              <span>Brand Identity</span>
+              <span>Responsive Build</span>
+            </div>
+          </div>
+          <div class="project-block__visual reveal reveal--delay-1">
+            <div class="project-block__browser">
+              <div class="browser-bar">
+                <span class="browser-dot"></span>
+                <span class="browser-dot"></span>
+                <span class="browser-dot browser-dot--active"></span>
+              </div>
+              <div class="browser-screen">
+                <img src="assets/tajinos.png" alt="Tajinos Project" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ArgaPure -->
+    <div class="project-block project-block--light">
+      <div class="container">
+        <div class="project-block__inner project-block__inner--reverse">
+          <div class="project-block__info reveal">
+            <span class="project-block__category project-block__category--gold">Organic Wellness</span>
+            <h2 class="project-block__name project-block__name--dark">ARGAPURE</h2>
+            <h3 class="project-block__subtitle project-block__subtitle--dark">The Vision</h3>
+            <p class="project-block__desc project-block__desc--dark">A luxury landing page for organic argan oil, blending high-end beauty aesthetics with wellness-driven conversions.</p>
+            <div class="project-block__tags project-block__tags--dark">
+              <span>UI/UX Strategy</span>
+              <span>E-Commerce Flow</span>
+              <span>Brand Identity</span>
+              <span>Responsive Build</span>
+            </div>
+            <div class="project-callouts">
+              <div class="project-callout">
+                <strong>Design System</strong>
+                <p>Clean, minimalist UI focused on product purity.</p>
+              </div>
+              <div class="project-callout">
+                <strong>User Journey</strong>
+                <p>Seamless experience from discovery to checkout.</p>
+              </div>
+            </div>
+          </div>
+          <div class="project-block__visual reveal reveal--delay-1">
+            <div class="project-block__mockup">
+              <img src="assets/argapure.png" alt="ArgaPure Project" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CONTACT ═══════════════════ -->
+  <section class="contact" id="contact">
+    <div class="contact__bg"></div>
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__header reveal">
+          <div class="contact__divider"></div>
+          <h2 class="contact__title">LET'S WORK<br/><span>TOGETHER</span></h2>
+          <p class="contact__sub">Elevate Your Digital Presence</p>
+        </div>
+        <div class="contact__socials reveal reveal--delay-1">
+          <a href="https://www.instagram.com/nouh.eh" target="_blank" rel="noopener" class="social-card">
+            <div class="social-card__img">
+              <img src="assets/insta.png" alt="Instagram" />
+            </div>
+            <strong>Instagram</strong>
+            <span>nouh.eh</span>
+          </a>
+          <a href="https://www.facebook.com/nouh.elhichem" target="_blank" rel="noopener" class="social-card">
+            <div class="social-card__img">
+              <img src="assets/fb.png" alt="Facebook" />
+            </div>
+            <strong>Facebook</strong>
+            <span>Nouh Elhichem</span>
+          </a>
+          <a href="https://www.linkedin.com/in/nouh-elhichem" target="_blank" rel="noopener" class="social-card">
+            <div class="social-card__img">
+              <img src="assets/linkedin.png" alt="LinkedIn" />
+            </div>
+            <strong>LinkedIn</strong>
+            <span>Nouh Elhichem</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span class="footer__name">NOUH ELHICHEM</span>
+          <p class="footer__tagline">Junior Web Developer<br/>&amp; UI/UX Designer</p>
+        </div>
+        <div class="footer__col">
+          <h4>Social</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/nouh.eh" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/nouh.elhichem" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.linkedin.com/in/nouh-elhichem" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="mailto:contact@nouhelhichem.com">E-mail</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Features</h4>
+          <ul>
+            <li><a href="#skills">Core Skills</a></li>
+            <li><a href="#skills">Expertise</a></li>
+            <li><a href="#services">Services</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="#projects">Tajinos</a></li>
+            <li><a href="#projects">ArgaPure</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact">Support</a></li>
+            <li><a href="#">Legal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Nouh Elhichem. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
