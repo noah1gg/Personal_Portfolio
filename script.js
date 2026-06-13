@@ -7,8 +7,17 @@
 
 // ── Nav: scroll behaviour ──
 const nav = document.getElementById('nav');
+const scrollProgress = document.getElementById('scrollProgress');
+const backToTop = document.getElementById('backToTop');
+
+// UX helpers: keep scroll progress, nav background, and back-to-top state in sync.
 const onScroll = () => {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+
   nav.classList.toggle('scrolled', window.scrollY > 20);
+  if (scrollProgress) scrollProgress.style.width = `${progress}%`;
+  if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 520);
 };
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
@@ -31,6 +40,30 @@ navLinks.querySelectorAll('.nav__link').forEach(link => {
     document.body.style.overflow = '';
   });
 });
+
+// Smooth anchor navigation: offsets the fixed navbar for every in-page link.
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    const targetId = anchor.getAttribute('href');
+    if (!targetId || targetId === '#') return;
+
+    const target = document.querySelector(targetId);
+    if (!target) return;
+
+    e.preventDefault();
+    const navHeight = nav ? nav.offsetHeight : 0;
+    const top = target.getBoundingClientRect().top + window.scrollY - navHeight + 1;
+
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
+});
+
+// Back to top: smooth return to the page start.
+if (backToTop) {
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 // ── Reveal on scroll (IntersectionObserver) ──
 const revealEls = document.querySelectorAll('.reveal');
@@ -59,17 +92,12 @@ const activeObserver = new IntersectionObserver(
       if (entry.isIntersecting) {
         const id = entry.target.getAttribute('id');
         navLinkEls.forEach(link => {
-          link.style.color = '';
-          if (link.getAttribute('href') === `#${id}`) {
-            if (!link.classList.contains('nav__link--cta')) {
-              link.style.color = 'var(--gold)';
-            }
-          }
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
         });
       }
     });
   },
-  { threshold: 0.4 }
+  { threshold: 0.35, rootMargin: '-22% 0px -58% 0px' }
 );
 
 sections.forEach(s => activeObserver.observe(s));
@@ -122,7 +150,8 @@ if (window.innerWidth > 1024) {
 
 // ── Skill/service card tilt on hover (desktop only) ──
 if (window.innerWidth > 1024) {
-  const tiltCards = document.querySelectorAll('.skill-card, .service-card');
+  // Tilt enhancement: extends the existing desktop interaction to new cards.
+  const tiltCards = document.querySelectorAll('.skill-card, .service-card, .process-card, .tech-card');
   tiltCards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();

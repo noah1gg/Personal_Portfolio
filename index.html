@@ -8,20 +8,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Favicon: uses the main portfolio logo in browser tabs. -->
+  <link rel="icon" type="image/png" href="assets/mainlo.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Scroll progress: thin premium indicator for page position. -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <!-- ═══════════════════ NAV ═══════════════════ -->
   <nav class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#hero" class="nav__logo">NOUH <span>ELHICHEM</span></a>
+      <!-- Navbar logo: image brand mark that scrolls back to the hero. -->
+      <a href="#hero" class="nav__logo" aria-label="Nouh Elhichem home">
+        <img src="assets/mainlo.png" alt="Nouh Elhichem logo" loading="lazy" />
+      </a>
       <ul class="nav__links" id="navLinks">
         <li><a href="#about" class="nav__link">About</a></li>
         <li><a href="#values" class="nav__link">Values</a></li>
         <li><a href="#skills" class="nav__link">Skills</a></li>
         <li><a href="#services" class="nav__link">Services</a></li>
+        <li><a href="#process" class="nav__link">How I Work</a></li>
         <li><a href="#projects" class="nav__link">Work's</a></li>
+        <li><a href="#tech-stack" class="nav__link">Tech Stack</a></li>
         <li><a href="#contact" class="nav__link nav__link--cta">Contact</a></li>
       </ul>
       <button class="nav__burger" id="burger" aria-label="Toggle menu">
@@ -40,6 +49,10 @@
       <div class="hero__tags reveal reveal--delay-2">
         <a href="#skills" class="hero__tag hero__tag--solid">Core Skills &amp; Expertise</a>
         <a href="#services" class="hero__tag hero__tag--ghost">Services</a>
+        <!-- Download CV CTA: downloads the resume with the requested filename. -->
+        <a href="assets/cv-perso.pdf" download="Nouh_ELHICHEM_CV.pdf" class="hero__tag hero__tag--ghost hero__tag--download" aria-label="Download Nouh Elhichem CV">
+          <span aria-hidden="true">↓</span> Download CV
+        </a>
       </div>
     </div>
     <div class="hero__card reveal reveal--delay-3">
@@ -47,7 +60,7 @@
         <h2 class="hero__role">WEB<br/>DEVELOPER<br/><span>&amp; UI/UX DESIGNER</span></h2>
       </div>
       <div class="hero__card-img">
-        <img src="assets/me.png" alt="Nouh Elhichem" />
+        <img src="assets/me.png" alt="Nouh Elhichem" loading="lazy" />
       </div>
     </div>
     <a href="#about" class="hero__scroll" aria-label="Scroll down">
@@ -207,6 +220,42 @@
     </div>
   </section>
 
+  <!-- How I Work: process cards added between Services and Projects. -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-header__line"></div>
+        <div>
+          <span class="section-label">How I Work</span>
+          <h2 class="section-title">FROM IDEA<br/>TO LAUNCH</h2>
+          <p class="section-sub">A focused process that keeps every project strategic, polished, and ready for real users.</p>
+        </div>
+      </div>
+      <div class="process__grid">
+        <article class="process-card reveal">
+          <span class="process-card__number">01</span>
+          <h3 class="process-card__title">Research</h3>
+          <p class="process-card__desc">Understanding goals, audience, and project requirements before starting any design or development work.</p>
+        </article>
+        <article class="process-card reveal reveal--delay-1">
+          <span class="process-card__number">02</span>
+          <h3 class="process-card__title">Design</h3>
+          <p class="process-card__desc">Creating wireframes, layouts, and user-centered interfaces focused on usability and aesthetics.</p>
+        </article>
+        <article class="process-card reveal reveal--delay-2">
+          <span class="process-card__number">03</span>
+          <h3 class="process-card__title">Development</h3>
+          <p class="process-card__desc">Transforming concepts into responsive, performant, and scalable web experiences.</p>
+        </article>
+        <article class="process-card reveal reveal--delay-3">
+          <span class="process-card__number">04</span>
+          <h3 class="process-card__title">Launch</h3>
+          <p class="process-card__desc">Testing, optimization, deployment, and continuous improvement after release.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════════════════ PROJECTS ═══════════════════ -->
   <section class="projects" id="projects">
     <div class="container">
@@ -240,7 +289,7 @@
                 <span class="browser-dot browser-dot--active"></span>
               </div>
               <div class="browser-screen">
-                <img src="assets/tajinos.png" alt="Tajinos Project" />
+                <img src="assets/tajinos.png" alt="Tajinos Project" loading="lazy" />
               </div>
             </div>
           </div>
@@ -276,10 +325,136 @@
           </div>
           <div class="project-block__visual reveal reveal--delay-1">
             <div class="project-block__mockup">
-              <img src="assets/argapure.png" alt="ArgaPure Project" />
+              <img src="assets/argapure.png" alt="ArgaPure Project" loading="lazy" />
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack: responsive showcase for development and UI/UX tools. -->
+  <section class="tech-stack" id="tech-stack">
+    <div class="container">
+      <div class="section-header tech-stack__header reveal">
+        <div class="tech-stack__header-main">
+          <div class="section-header__line"></div>
+          <div>
+            <span class="section-label">Tech Stack</span>
+            <h2 class="section-title">TOOLS I USE<br/>TO BUILD</h2>
+            <p class="section-sub">A practical mix of frontend, backend, CMS, version control, and design tools.</p>
+          </div>
+        </div>
+        <!-- Floating tech visual: gives the stack a premium, image-driven focal point. -->
+        <div class="tech-stack__float" aria-hidden="true">
+          <img src="assets/tech/html5.svg" alt="" loading="lazy" />
+          <img src="assets/tech/css3.svg" alt="" loading="lazy" />
+          <img src="assets/tech/javascript.svg" alt="" loading="lazy" />
+          <img src="assets/tech/figma.svg" alt="" loading="lazy" />
+          <img src="assets/tech/github.svg" alt="" loading="lazy" />
+        </div>
+      </div>
+      <div class="tech-stack__grid">
+        <article class="tech-card reveal">
+          <div class="tech-card__media">
+            <img src="assets/tech/html5.svg" alt="HTML5 logo" loading="lazy" />
+          </div>
+          <div class="tech-card__content">
+            <span class="tech-card__eyebrow">Markup</span>
+            <h3>HTML5</h3>
+            <p>Semantic and accessible markup.</p>
+          </div>
+        </article>
+        <article class="tech-card reveal reveal--delay-1">
+          <div class="tech-card__media">
+            <img src="assets/tech/css3.svg" alt="CSS3 logo" loading="lazy" />
+          </div>
+          <div class="tech-card__content">
+            <span class="tech-card__eyebrow">Styling</span>
+            <h3>CSS3</h3>
+            <p>Responsive layouts and polished interfaces.</p>
+          </div>
+        </article>
+        <article class="tech-card reveal reveal--delay-2">
+          <div class="tech-card__media">
+            <img src="assets/tech/javascript.svg" alt="JavaScript logo" loading="lazy" />
+          </div>
+          <div class="tech-card__content">
+            <span class="tech-card__eyebrow">Interaction</span>
+            <h3>JavaScript</h3>
+            <p>Interactive and dynamic web experiences.</p>
+          </div>
+        </article>
+        <article class="tech-card reveal reveal--delay-3">
+          <div class="tech-card__media">
+            <img src="assets/tech/php.svg" alt="PHP logo" loading="lazy" />
+          </div>
+          <div class="tech-card__content">
+            <span class="tech-card__eyebrow">Backend</span>
+            <h3>PHP</h3>
+            <p>Server-side logic for practical websites.</p>
+          </div>
+        </article>
+        <article class="tech-card reveal">
+          <div class="tech-card__media">
+            <img src="assets/tech/django.svg" alt="Django logo" loading="lazy" />
+          </div>
+          <div class="tech-card__content">
+            <span class="tech-card__eyebrow">Framework</span>
+            <h3>Django</h3>
+            <p>Structured backend web applications.</p>
+          </div>
+        </article>
+        <article class="tech-card reveal reveal--delay-1">
+          <div class="tech-card__media">
+            <img src="assets/tech/laravel.svg" alt="Laravel logo" loading="lazy" />
+          </div>
+          <div class="tech-card__content">
+            <span class="tech-card__eyebrow">Framework</span>
+            <h3>Laravel</h3>
+            <p>Elegant PHP applications and workflows.</p>
+          </div>
+        </article>
+        <article class="tech-card reveal reveal--delay-2">
+          <div class="tech-card__media">
+            <img src="assets/tech/wordpress.svg" alt="WordPress logo" loading="lazy" />
+          </div>
+          <div class="tech-card__content">
+            <span class="tech-card__eyebrow">CMS</span>
+            <h3>WordPress</h3>
+            <p>Custom websites and CMS solutions.</p>
+          </div>
+        </article>
+        <article class="tech-card reveal reveal--delay-3">
+          <div class="tech-card__media">
+            <img src="assets/tech/figma.svg" alt="Figma logo" loading="lazy" />
+          </div>
+          <div class="tech-card__content">
+            <span class="tech-card__eyebrow">Design</span>
+            <h3>Figma</h3>
+            <p>UI/UX design and prototyping.</p>
+          </div>
+        </article>
+        <article class="tech-card reveal">
+          <div class="tech-card__media">
+            <img src="assets/tech/git.svg" alt="Git logo" loading="lazy" />
+          </div>
+          <div class="tech-card__content">
+            <span class="tech-card__eyebrow">Versioning</span>
+            <h3>Git</h3>
+            <p>Clean version control workflows.</p>
+          </div>
+        </article>
+        <article class="tech-card reveal reveal--delay-1">
+          <div class="tech-card__media">
+            <img src="assets/tech/github.svg" alt="GitHub logo" loading="lazy" />
+          </div>
+          <div class="tech-card__content">
+            <span class="tech-card__eyebrow">Collaboration</span>
+            <h3>GitHub</h3>
+            <p>Project hosting and collaboration.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -297,21 +472,21 @@
         <div class="contact__socials reveal reveal--delay-1">
           <a href="https://www.instagram.com/nouh.eh" target="_blank" rel="noopener" class="social-card">
             <div class="social-card__img">
-              <img src="assets/insta.png" alt="Instagram" />
+              <img src="assets/insta.png" alt="Instagram" loading="lazy" />
             </div>
             <strong>Instagram</strong>
             <span>nouh.eh</span>
           </a>
           <a href="https://www.facebook.com/nouh.elhichem" target="_blank" rel="noopener" class="social-card">
             <div class="social-card__img">
-              <img src="assets/fb.png" alt="Facebook" />
+              <img src="assets/fb.png" alt="Facebook" loading="lazy" />
             </div>
             <strong>Facebook</strong>
             <span>Nouh Elhichem</span>
           </a>
           <a href="https://www.linkedin.com/in/nouh-elhichem" target="_blank" rel="noopener" class="social-card">
             <div class="social-card__img">
-              <img src="assets/linkedin.png" alt="LinkedIn" />
+              <img src="assets/linkedin.png" alt="LinkedIn" loading="lazy" />
             </div>
             <strong>LinkedIn</strong>
             <span>Nouh Elhichem</span>
@@ -320,6 +495,11 @@
       </div>
     </div>
   </section>
+
+  <!-- Back to top: fixed control lives before the footer so the footer remains the final page block. -->
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
 
   <!-- ═══════════════════ FOOTER ═══════════════════ -->
   <footer class="footer">
@@ -342,8 +522,9 @@
           <h4>Features</h4>
           <ul>
             <li><a href="#skills">Core Skills</a></li>
-            <li><a href="#skills">Expertise</a></li>
+            <li><a href="#process">How I Work</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#tech-stack">Tech Stack</a></li>
           </ul>
         </div>
         <div class="footer__col">
@@ -368,6 +549,5 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
