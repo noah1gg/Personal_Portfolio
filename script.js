@@ -9,6 +9,14 @@
 const nav = document.getElementById('nav');
 const scrollProgress = document.getElementById('scrollProgress');
 const backToTop = document.getElementById('backToTop');
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+
+const closeMenu = () => {
+  if (burger) burger.classList.remove('open');
+  if (navLinks) navLinks.classList.remove('open');
+  document.body.style.overflow = '';
+};
 
 // UX helpers: keep scroll progress, nav background, and back-to-top state in sync.
 const onScroll = () => {
@@ -23,23 +31,17 @@ window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
 // ── Nav: mobile burger ──
-const burger = document.getElementById('burger');
-const navLinks = document.getElementById('navLinks');
-
-burger.addEventListener('click', () => {
-  burger.classList.toggle('open');
-  navLinks.classList.toggle('open');
-  document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
-});
-
-// Close mobile nav when a link is tapped
-navLinks.querySelectorAll('.nav__link').forEach(link => {
-  link.addEventListener('click', () => {
-    burger.classList.remove('open');
-    navLinks.classList.remove('open');
-    document.body.style.overflow = '';
+if (burger && navLinks) {
+  burger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
-});
+
+  navLinks.querySelectorAll('.nav__link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+}
 
 // Smooth anchor navigation: offsets the fixed navbar for every in-page link.
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -68,19 +70,21 @@ if (backToTop) {
 // ── Reveal on scroll (IntersectionObserver) ──
 const revealEls = document.querySelectorAll('.reveal');
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12, rootMargin: '0px 0px -48px 0px' }
-);
+if (revealEls.length) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -48px 0px' }
+  );
 
-revealEls.forEach(el => revealObserver.observe(el));
+  revealEls.forEach(el => revealObserver.observe(el));
+}
 
 // ── Active nav link on scroll ──
 const sections = document.querySelectorAll('section[id]');
@@ -103,7 +107,8 @@ const activeObserver = new IntersectionObserver(
 sections.forEach(s => activeObserver.observe(s));
 
 // ── Cursor glow effect (desktop only) ──
-if (window.innerWidth > 1024) {
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (window.innerWidth > 1024 && !prefersReducedMotion) {
   const glow = document.createElement('div');
   glow.style.cssText = `
     position: fixed;
@@ -139,7 +144,7 @@ if (window.innerWidth > 1024) {
 }
 
 // ── Skill/service card tilt on hover (desktop only) ──
-if (window.innerWidth > 1024) {
+if (window.innerWidth > 1024 && !prefersReducedMotion) {
   // Tilt enhancement: extends the existing desktop interaction to new cards.
   const tiltCards = document.querySelectorAll('.skill-card, .service-card, .process-card, .tech-card');
   tiltCards.forEach(card => {

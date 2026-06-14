@@ -1056,7 +1056,7 @@ ul   { list-style: none; }
 ════════════════════════════════════════ */
 .contact {
   position: relative;
-  padding: var(--space-2xl) 0;
+  padding: 42px 0 10px;
   overflow: hidden;
   background: var(--bg-deep);
 }
@@ -1090,7 +1090,7 @@ ul   { list-style: none; }
 .contact__sub {
   font-size: 1rem;
   color: rgba(255,255,255,0.38);
-  margin-bottom: 64px;
+  margin-bottom: 28px;
   letter-spacing: 0.06em;
 }
 .contact__socials {
@@ -1136,7 +1136,6 @@ ul   { list-style: none; }
 .footer {
   background: var(--bg-deep);
   border-top: 1px solid var(--border-dark);
-  /* Footer ending: keep the copyright band as the final visible page edge. */
   padding: 18px 0 0;
   margin-top: auto;
   margin-bottom: 0;
@@ -1144,8 +1143,8 @@ ul   { list-style: none; }
 .footer__inner {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 24px;
+  gap: 14px 18px;
+  margin-bottom: 8px;
 }
 .footer__name {
   display: block;
