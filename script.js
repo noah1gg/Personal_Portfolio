@@ -102,16 +102,6 @@ const activeObserver = new IntersectionObserver(
 
 sections.forEach(s => activeObserver.observe(s));
 
-// ── Smooth parallax on hero background ──
-const heroBg = document.querySelector('.hero__bg');
-if (heroBg && window.innerWidth > 768) {
-  const parallaxScroll = () => {
-    const y = window.scrollY;
-    heroBg.style.transform = `translateY(${y * 0.3}px)`;
-  };
-  window.addEventListener('scroll', parallaxScroll, { passive: true });
-}
-
 // ── Cursor glow effect (desktop only) ──
 if (window.innerWidth > 1024) {
   const glow = document.createElement('div');

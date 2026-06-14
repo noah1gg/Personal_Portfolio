@@ -29,11 +29,11 @@
 
   /* Spacing scale */
   --space-xs:  8px;
-  --space-sm:  16px;
-  --space-md:  32px;
-  --space-lg:  64px;
-  --space-xl:  100px;
-  --space-2xl: 140px;
+  --space-sm:  12px;
+  --space-md:  18px;
+  --space-lg:  28px;
+  --space-xl:  42px;
+  --space-2xl: 56px;
 }
 
 /* ── Reset ── */
@@ -45,6 +45,9 @@ html {
   text-rendering: optimizeLegibility;
 }
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: 'Manrope', sans-serif;
   background: var(--bg-deep);
   color: var(--text-white);
@@ -53,6 +56,7 @@ body {
   line-height: 1.6;
   animation: pageEnter 0.8s var(--ease-out) both;
 }
+.page-content { flex: 1 0 auto; }
 img  { display: block; max-width: 100%; height: auto; }
 a    { text-decoration: none; color: inherit; }
 ul   { list-style: none; }
@@ -263,19 +267,19 @@ ul   { list-style: none; }
 ════════════════════════════════════════ */
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;              /* ← centre everything horizontally */
+  align-items: center;
   text-align: center;
-  padding: calc(var(--nav-h) + 56px) 48px 96px;
-  gap: 56px;
+  padding: calc(var(--nav-h) + 24px) 48px 40px;
+  gap: 32px;
 }
 
 /* Gradient bg fixed so it covers whole page */
 .hero__bg {
-  position: fixed;
+  position: absolute;
   inset: 0;
   background:
     radial-gradient(ellipse 80% 70% at 55% 30%, #4E637A 0%, #2E3E50 35%, #1A2230 60%, transparent 100%),
@@ -283,7 +287,7 @@ ul   { list-style: none; }
   z-index: -2;
 }
 .hero__noise {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: -1;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
@@ -1133,7 +1137,8 @@ ul   { list-style: none; }
   background: var(--bg-deep);
   border-top: 1px solid var(--border-dark);
   /* Footer ending: keep the copyright band as the final visible page edge. */
-  padding: 48px 0 0;
+  padding: 18px 0 0;
+  margin-top: auto;
   margin-bottom: 0;
 }
 .footer__inner {
@@ -1365,3 +1370,4 @@ ul   { list-style: none; }
 
   .footer__inner { grid-template-columns: 1fr; }
 }
+
